@@ -1,12 +1,13 @@
 package com.digitallabs.tci_assessment.service;
 
 import com.digitallabs.tci_assessment.dto.EmployeeDTO;
-import org.springframework.stereotype.Service;
+import com.digitallabs.tci_assessment.dto.EmployeeListDTO;
+import com.digitallabs.tci_assessment.dto.GetResponse;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public interface EmployeeService {
-    void saveEmployee(List<EmployeeDTO> employeeRequests);
-    List<EmployeeDTO> getEligibleEmployees(LocalDate requestDate);
+    void saveSingleEmployee(EmployeeDTO employeeDTO);
+    void saveEmployee(EmployeeListDTO employeeRequests);
+    GetResponse getEligibleEmployees(LocalDate requestDate);
 }

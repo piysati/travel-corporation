@@ -8,10 +8,16 @@ import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
     //save
+
+
+
+    Optional<Employee> findByEmpName(String empName);
+
     //get employee for bonus
     @Query("SELECT e FROM Employee e WHERE e.joiningDate <= :requestDate " +
             "AND (e.exitDate IS NULL OR e.exitDate >= :requestDate) " +
